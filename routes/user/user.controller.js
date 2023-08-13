@@ -33,6 +33,7 @@ const login = async (req, res) => {
     const permissionNames = permissions.rolePermission.map(
       (rp) => rp.permission.name
     );
+
     // console.log("permissionNames", permissionNames);
     if (user) {
       const token = jwt.sign(
@@ -42,6 +43,7 @@ const login = async (req, res) => {
           expiresIn: "24h",
         }
       );
+      
       const { password, ...userWithoutPassword } = user;
       return res.json({
         ...userWithoutPassword,

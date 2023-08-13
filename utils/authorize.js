@@ -1,5 +1,7 @@
+require("dotenv").config()
+
 var { expressjwt: jwt } = require("express-jwt");
-const secret = "sisir_chikon_ho";
+const secret = process.env.JWT_SECRET;
 
 function authorize(permission) {
   return [

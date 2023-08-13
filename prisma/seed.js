@@ -92,6 +92,7 @@ async function main() {
       role: "staff",
     },
   });
+
   await prisma.permission.createMany({
     data: permissions.map((permission) => {
       return {
@@ -99,6 +100,7 @@ async function main() {
       };
     }),
   });
+
   await prisma.role.createMany({
     data: roles.map((role) => {
       return {
@@ -106,6 +108,7 @@ async function main() {
       };
     }),
   });
+
   for (let i = 1; i <= permissions.length; i++) {
     await prisma.rolePermission.create({
       data: {
@@ -122,6 +125,7 @@ async function main() {
       },
     });
   }
+  
   await prisma.account.createMany({
     data: account,
   });

@@ -37,8 +37,8 @@ const app = express();
 let allowedOrigins = [
   "http://localhost:3000",
   "http://localhost:5000",
-  "http://posbackend.pandfco.net",
-  "http://inventory.pandfco.net",
+  "https://inventory-app-five-beryl.vercel.app"
+
 ];
 
 // limit the number of requests from a single IP address
